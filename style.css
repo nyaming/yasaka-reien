@@ -1,0 +1,154 @@
+@charset "UTF-8";
+
+/*---------------------
+  全体
+--------------------- */
+
+a:link, a:hover, a:active, a:visited {
+  text-decoration: none;
+  color: inherit;
+}
+*, *::before, * ::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Times New Roman", "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "游明朝", YuMincho, "HG明朝E", "ＭＳ Ｐ明朝", "MS PMincho", "MS 明朝", serif;
+ font-size: 1.6rem;
+ color: #595757;
+}
+
+/*---------------------
+  ヘッダー・ナビ
+--------------------- */
+
+.header {
+  background-color: #fff;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  box-shadow: 0 3px 3px 0 rgba(255,255,255,0.3);
+  color: #000;
+}
+
+.header .inner {
+  max-width: 1040px;
+  height: 100%;
+  padding: 34.5px 20px;
+  margin: 0 auto;
+}
+
+.header .flexbox {
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  width: 100%;
+  height: 100%;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.site_logo {
+  margin-right: auto;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  -webkit-box-align: end;
+  -ms-flex-align: end;
+  align-items: flex-end;
+}
+.site_logo a {
+  display: block;
+  width: 200px;
+  height: 44px;
+  background: url("images/logo.png")no-repeat;
+  background-size: contain;
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  margin-right: 10px;
+}
+.tel {
+  font-size: 2.2rem;
+/*   margin-right: auto; */
+  -ms-flex-item-align: /* flex-end;
+  -ms-grid-row-align: flex-end;
+  align-self: flex-end; */
+}
+.nav {
+  padding-top: 10px;
+}
+.nav ul {
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+.nav ul li {
+  margin-left: 40px;
+}
+.nav ul li:first-child {
+  margin-left: 0;
+}
+
+.nav ul li a {
+  font-size: 1.8rem;
+}
+.nav ul li a:hover {
+  text-decoration: underline;
+}
+
+@media screen and (max-width: 959px) {
+  .nav ul li a {
+    font-size: 1.6rem;
+  }
+  .nav ul li {
+    margin-left: 20px;
+  }
+  .nav ul li:first-child {
+    margin-left: 0;
+  }
+}
+
+/*---------------------
+  ヒーロー
+--------------------- */
+.main {
+  padding: 110px 0 0;
+}
+
+.hero {
+  height: 482px;
+  background: url("images/bg_mainvisual.jpg") no-repeat center;
+  -webkit-background-size: cover;
+  background-size: cover;
+  border-top: 1px solid #018C6B;
+  border-bottom: 1px solid #018C6B;
+  padding-top:75px;
+  position: relative;
+}
+.catch_box {
+  width: 500px;
+  background: url("images/bg_mainvisual_txt01.png") repeat-y;
+
+  padding: 30px 0 25px 100px;
+  position: absolute;
+  right: 0;
+
+}
+.catch {
+
+
+}

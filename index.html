@@ -44,7 +44,34 @@
       </div>
     </div><!-- /hero -->
 
-  </main><!-- /main -->
+<!--     <a class="menu-trigger">
+ <span></span>
+ <span></span>
+ <span></span>
+   </a>
+   <nav>
+ <ul>
+   <li><a href="">MENU</a></li>
+   <li><a href="">MENU</a></li>
+   <li><a href="">MENU</a></li>
+   <li><a href="">MENU</a></li>
+   <li><a href="">MENU</a></li>
+ </ul>
+   </nav> -->
 
+</main><!-- /main -->
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+<script>
+$(function(){
+  $('.menu_btn').on('click',function(){
+    $(this).toggleClass('active');
+    $('.nav').slideToggle();
+  });
+});
+</script>
 </body>
 </html>

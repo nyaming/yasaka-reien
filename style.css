@@ -100,7 +100,20 @@ img {
   height: 1px;
   background-color: #018C6B;
   margin: 5px auto;
+  -webkit-transition: transform 0.5s;
+  -o-transition: transform 0.5s;
+  transition: transform 0.5s;
 }
+.menu_btn.active > span:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
+}
+.menu_btn.active > span:nth-child(2) {
+  opacity: 0;
+}
+.menu_btn.active > span:nth-child(3) {
+  transform: translateY(-6px) rotate(-45deg);
+}
+
 /* .menu_btn::before,
 .menu_btn::after {
   content: "";
@@ -156,6 +169,7 @@ img {
 @media screen and (max-width: 767px) {
   .header .inner {
     padding: 12px 10px;
+    position: relative;
   }
   .site_logo a {
     width: 100px;
@@ -169,9 +183,31 @@ img {
   .menu_btn {
     display: block;
   }
+  .menu_btn:hover {
+    cursor: pointer;
+  }
   .nav {
     display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    padding-top: 0;
+    text-align: center;
+    width: 100%;
+    background-color: #fff;
   }
+  .nav ul {
+    display: block;
+  }
+  .nav ul li {
+    margin-left: 0px;
+    padding: 10px 0;
+    border-top: 1px solid #000;
+  }
+  .nav ul li:last-child {
+    border-bottom: 1px solid #000;
+  }
+
 }
 /*---------------------
   ヒーロー
@@ -198,7 +234,7 @@ img {
 }
 .catch_box {
   width: 500px;
-  background: url(images/bg_mainvisual_txt01.png) repeat-y left top/ 100% 100%;
+  background: url("images/bg_mainvisual_txt01.png") repeat-y left top/ 100% 100%;
   padding: 30px 0 25px 100px;
   position: absolute;
   right: 0;
@@ -236,8 +272,15 @@ img {
 
 /*
 - SPのときだけ電話番号にtel:リンクつける方法
+  aタグをつけたtelと何もつけていないtelの2つをメディアクエリで出し分ける
 
 - メニューボタンをCSSで作る（横線3つをどう作るかがわからなかった　はじめbefore/after疑似要素とspan1つの3つで並べて作ろうとしたけどうまくいかず、spanを3つならべて要素間のマージンを計算して指定した）
+ドロワーメニューが開いているときのボタンデザイン（バツマーク）
+transformプロパティにまとめて rotateとtranslateYを指定する
+transitionで0.3sほどつけてあげると動きがスムーズ
 
 - ドロワーメニューの実装
+　jquery のバージョン違い？で動かなかった　slimはだめ
+参考にしたスクリプトURL
 */
+/*

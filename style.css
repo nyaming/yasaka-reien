@@ -85,11 +85,38 @@ img {
 }
 .tel {
   font-size: 2.2rem;
-/*   margin-right: auto; */
-  -ms-flex-item-align: /* flex-end;
-  -ms-grid-row-align: flex-end;
-  align-self: flex-end; */
+  line-height: 1.0;
 }
+.menu_btn {
+  display: none;
+  width: 25px;
+  height: 25px;
+  border: 1px solid #018C6B;
+  text-align: center;
+}
+.menu_btn > span {
+  display: block;
+  width: 17px;
+  height: 1px;
+  background-color: #018C6B;
+  margin: 5px auto;
+}
+/* .menu_btn::before,
+.menu_btn::after {
+  content: "";
+  display: inline-block;
+  width: 17px;
+  height: 1px;
+  background-color: #018C6B;
+  position: absolute;
+}
+.menu_btn::before {
+  top: 6.6666%;
+}
+.menu_btn::after {
+  bottom: 6.6666%;
+} */
+
 .nav {
   padding-top: 10px;
 }
@@ -126,7 +153,26 @@ img {
     margin-left: 0;
   }
 }
-
+@media screen and (max-width: 767px) {
+  .header .inner {
+    padding: 12px 10px;
+  }
+  .site_logo a {
+    width: 100px;
+    height: 22px;
+    margin-right: 5px;
+    margin-top: 3px;
+  }
+  .tel {
+    font-size: 1.5rem;
+  }
+  .menu_btn {
+    display: block;
+  }
+  .nav {
+    display: none;
+  }
+}
 /*---------------------
   ヒーロー
 --------------------- */
@@ -152,7 +198,7 @@ img {
 }
 .catch_box {
   width: 500px;
-  background: url("images/bg_mainvisual_txt01.png") repeat-y;
+  background: url(images/bg_mainvisual_txt01.png) repeat-y left top/ 100% 100%;
   padding: 30px 0 25px 100px;
   position: absolute;
   right: 0;
@@ -168,3 +214,30 @@ img {
   left: 100%;
   background: url("images/bg_mainvisual_txt02.png")repeat left center;
 }
+
+@media screen and (max-width: 767px) {
+  .main {
+    padding-top: 45px;
+  }
+  .hero {
+    height: 157px;
+    padding-top: 30px;
+  }
+  .catch_box {
+    width: 180px;
+    height: 96px;
+    padding: 15px 0 20px 35px;
+  }
+  .catch {
+    width: 121px;
+    height: 61px;
+  }
+}
+
+/*
+- SPのときだけ電話番号にtel:リンクつける方法
+
+- メニューボタンをCSSで作る（横線3つをどう作るかがわからなかった　はじめbefore/after疑似要素とspan1つの3つで並べて作ろうとしたけどうまくいかず、spanを3つならべて要素間のマージンを計算して指定した）
+
+- ドロワーメニューの実装
+*/
